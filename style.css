@@ -3,13 +3,13 @@ body {
     font-size: 0.8rem;
     width: 16rem;
     margin: auto;
+    background-color: #ebf2ff;
 }
 
 .item-result,
 .input-search {
     height: 1.5rem;
     margin: 0.5rem;
-    padding: 0.3rem 1.5rem;
     border-radius: 0.3rem;
     box-sizing: border-box;
 }
@@ -17,12 +17,14 @@ body {
 .input-search {
     background: url("https://img.icons8.com/ios-filled/344/search--v1.png") no-repeat left;
     background-size: 1.5rem 1.5rem;
-    padding-left: 2rem;
+    padding: 0.8rem 1.5rem 0.8rem 2rem;
     width: 15rem;
+    background-color: white;
 }
 
 .item-result {
     background-color: #623efc;
+    padding: 0.4rem 1.5rem;
     color: white;
     width: 15rem;
 }
