@@ -2,6 +2,8 @@ let dbFruits = []
 async function init() {
     dbFruits = await fetch('db.json')
         .then(response => response.json());
+    search();
+
 }
 init();
 
@@ -15,15 +17,14 @@ function addElementsResults(textFruit) {
     div.innerText = textFruit;
     searchResults.appendChild(div);
 }
-
-inputSearch.addEventListener('keyup', (e) => {
+function search() {
     const searchString = inputSearch.value;
     searchResults.innerHTML = ''
-    if (searchString !== '') {
-        dbFruits.filter((fruit) => {
-            regex = new RegExp('.*' + searchString + '.*', "i");
-            console.log(regex, fruit, regex.test(fruit))
-            return regex.test(fruit);
-        }).forEach(addElementsResults)
-    }
-});
+    dbFruits.filter((fruit) => {
+        regex = new RegExp('.*' + searchString + '.*', "i");
+        console.log(regex, fruit, regex.test(fruit))
+        return regex.test(fruit);
+    }).forEach(addElementsResults)
+
+}
+inputSearch.addEventListener('keyup', search);
